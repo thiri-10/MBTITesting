@@ -5,12 +5,13 @@
 
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { calculateMBTI } from '../utils/calculateMBTI'; 
 import MbtiDetail from '../components/MbtiDetail';
 import ResultCard from '../components/ResultCard';
 import ParticleBackground from '../components/ParticleBackground';
 import { detail } from '../utils/type';
+import Loading from '../components/Loading';
 
 
 
@@ -46,7 +47,8 @@ const ResultPage: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <div className='relative flex justify-center items-center '>
+    <Suspense fallback={<Loading/>}>
+      <div className='relative flex justify-center items-center '>
       <ParticleBackground />
       <div className='absolute
        top-10'>
@@ -96,6 +98,9 @@ const ResultPage: React.FC = () => {
       </div>
 
     </div>
+
+    </Suspense>
+    
 
 
   );
