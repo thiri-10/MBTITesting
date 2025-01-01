@@ -4,8 +4,8 @@
 
 
 
-import { useRouter, useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import {  useSearchParams } from 'next/navigation';
+import {  useEffect, useState } from 'react';
 import { calculateMBTI } from '../utils/calculateMBTI';
 import MbtiDetail from '../components/MbtiDetail';
 import ResultCard from '../components/ResultCard';
@@ -48,7 +48,7 @@ const ResultPage: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <Suspense fallback={<Loading/>}>
+    
           <div className='relative flex justify-center items-center '>
       <ParticleBackground />
       <div className='absolute
@@ -100,7 +100,7 @@ const ResultPage: React.FC = () => {
 
     </div>
 
-    </Suspense>
+  
 
 
 

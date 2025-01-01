@@ -1,7 +1,7 @@
 "use client";
 import { useParams } from "next/navigation"
 import { detail } from '../../utils/type';
-import { split } from "postcss/lib/list";
+ "postcss/lib/list";
 
 export default function page(){
 

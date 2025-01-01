@@ -1,6 +1,6 @@
 // app/test/page.tsx
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { questions } from '../utils/type'; // Adjust the path based on your setup
 import QuestionCard from '../components/QuestionCards';
@@ -39,8 +39,7 @@ const TestPage: React.FC = () => {
   return (
 
     <>
-     
-    
+     <Suspense fallback={<p>loading...</p>}>
      <div className=' text-center mt-[70px]'>
      <h2>Question {currentQuestionIndex + 1} of {questions.length}</h2>
      <ProgressBar current={currentQuestionIndex} total={60} />
@@ -64,6 +63,10 @@ const TestPage: React.FC = () => {
         </motion.div>
       {/* </AnimatePresence> */}
       
+
+     </Suspense>
+    
+    
     </>
 
   );
