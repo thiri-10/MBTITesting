@@ -6,12 +6,13 @@
 
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-import { calculateMBTI } from '../utils/calculateMBTI'; 
+import { calculateMBTI } from '../utils/calculateMBTI';
 import MbtiDetail from '../components/MbtiDetail';
 import ResultCard from '../components/ResultCard';
 import ParticleBackground from '../components/ParticleBackground';
 import { detail } from '../utils/type';
-import Loading from '../components/Loading';
+import Loading from '../Loading';
+
 
 
 
@@ -25,7 +26,7 @@ const ResultPage: React.FC = () => {
   const [weaknesses, setWeaknesses] = useState<string | null>(null);
 
 
-
+  useEffect(() => {
     const answersString = searchParams.get('answers');
 
     if (answersString) {
@@ -44,10 +45,11 @@ const ResultPage: React.FC = () => {
       }
 
     }
+  }, [searchParams]);
 
   return (
     <Suspense fallback={<Loading/>}>
-      <div className='relative flex justify-center items-center '>
+          <div className='relative flex justify-center items-center '>
       <ParticleBackground />
       <div className='absolute
        top-10'>
@@ -99,7 +101,10 @@ const ResultPage: React.FC = () => {
     </div>
 
     </Suspense>
-    
+
+
+
+
 
 
   );
