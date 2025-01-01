@@ -1,0 +1,75 @@
+import React from 'react';
+
+interface ResultCardProps {
+  type: string;  // e.g., "INFJ"
+  description: string;  // Description about the personality type
+  strengths: string[];  // Array of personality strengths
+  weaknesses: string[];  // Array of personality weaknesses
+}
+
+const ResultCard: React.FC<ResultCardProps> = ({ type, description, strengths, weaknesses }) => {
+  return (
+    <div className="max-w-lg mx-auto bg-purple-600 text-white rounded-lg shadow-lg p-8">
+      <h2 className="text-4xl font-bold mb-4 text-center">{type}</h2>
+      <p className="text-lg mb-6">{description}</p>
+
+      <div className="mb-6">
+        <h3 className="text-2xl font-semibold mb-2">Strengths</h3>
+        <ul className="list-disc list-inside space-y-1">
+          {strengths.map((strength, index) => (
+            <li key={index} className="text-sm">{strength}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-2xl font-semibold mb-2">Weaknesses</h3>
+        <ul className="list-disc list-inside space-y-1">
+          {weaknesses.map((weakness, index) => (
+            <li key={index} className="text-sm">{weakness}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default ResultCard;
+
+
+
+
+
+import React from 'react';
+import ResultCard from '../components/ResultCard';
+
+const MBTIResultPage: React.FC = () => {
+  const mbtiType = "INFJ";
+  const description = "INFJs are insightful and inspiring idealists. They tend to be sensitive and reserved, with a deep concern for human welfare.";
+  const strengths = ["Empathetic", "Insightful", "Determined"];
+  const weaknesses = ["Overly Idealistic", "Sensitive", "Private"];
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-purple-100">
+      <ResultCard
+        type={mbtiType}
+        description={description}
+        strengths={strengths}
+        weaknesses={weaknesses}
+      />
+    </div>
+  );
+};
+
+export default MBTIResultPage;
+
+
+///////////////////
+
+
+
+
+
+
+
+
