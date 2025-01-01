@@ -25,7 +25,7 @@ const ResultPage: React.FC = () => {
   const [weaknesses, setWeaknesses] = useState<string | null>(null);
 
 
-  useEffect(() => {
+
     const answersString = searchParams.get('answers');
 
     if (answersString) {
@@ -44,7 +44,6 @@ const ResultPage: React.FC = () => {
       }
 
     }
-  }, [searchParams]);
 
   return (
     <Suspense fallback={<Loading/>}>
