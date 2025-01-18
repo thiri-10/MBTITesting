@@ -14,14 +14,30 @@
   }
 }
 
-/* body {
-  color: var(--foreground);
-  background: var(--background);
+body {
+  /* color: var(--foreground);
+  background: var(--background); */
   font-family: Arial, Helvetica, sans-serif;
-} */
+  margin: 0 auto;
+}
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
 }
+
+/* input[type="radio"]:checked + .w-10 {
+  background-color: #8b5cf6; 
+  border-color: #8b5cf6; 
+}
+
+input[type="radio"]:checked + .w-10 > .w-6 {
+  background-color: #ffffff;
+}
+
+.w-10:hover {
+  background-color: #f3f4f6; 
+  transform: scale(1.1); 
+} */
+

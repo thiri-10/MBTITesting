@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
   
 
   return (
-    <div className="relative min-h-screen">
+    <div className="">
       <ParticlesBackground />
       {/* <div style={{ textAlign: 'center', marginTop: '100px' ,zIndex: 100}}> */}
       <MainPage startTest={startTest}/>

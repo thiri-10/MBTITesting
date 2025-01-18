@@ -6,496 +6,1167 @@ export interface Answer {
 }
 
 export interface Question {
-  id: number;
-  text: string;
-  answers: Answer[];
+  // map(arg0: (question: any, index: any) => import("react").JSX.Element): import("react").ReactNode;
+  // id: number;
+  // text: string;
+  // answers: Answer[];
+  id: number;         // Unique identifier
+  text: string;       // The question text
+  answers: {          // Array of possible answers
+    value: number;    // Answer value
+    text: string;     // Answer text
+  }[];
 }
 
 
 
 
 
+// export const questions = [
+//   {
+//     id: 1,
+//     text: "In your free time, do you prefer:",
+//     answers: [
+//       { text: "Spending time alone", value: 1 },  // Introversion
+//       { text: "Being with others", value: -1 }   // Extraversion
+//     ]
+//   },
+//   {
+//     id: 2,
+//     text: "In a social gathering, do you:",
+//     answers: [
+//       { text: "Stick with a small group of close friends", value: 1 },  // Introversion
+//       { text: "Mingle with as many people as possible", value: -1 }   // Extraversion
+//     ]
+//   },
+//   {
+//     id: 3,
+//     text: "After a long day, you prefer:",
+//     answers: [
+//       { text: "Relaxing in a quiet environment", value: 1 },  // Introversion
+//       { text: "Going out and socializing", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 4,
+//     text: "When meeting new people, do you:",
+//     answers: [
+//       { text: "Feel awkward or drained", value: 1 },  // Introversion
+//       { text: "Feel excited and energized", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 5,
+//     text: "You prefer conversations that are:",
+//     answers: [
+//       { text: "One-on-one or in small groups", value: 1 },  // Introversion
+//       { text: "In large groups with many people", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 6,
+//     text: "Do you usually:",
+//     answers: [
+//       { text: "Think before speaking", value: 1 },  // Introversion
+//       { text: "Speak your thoughts as they come to you", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 7,
+//     text: "Do you feel more energized when:",
+//     answers: [
+//       { text: "You have time to yourself", value: 1 },  // Introversion
+//       { text: "You are surrounded by people", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 8,
+//     text: "When working on a project, you prefer to:",
+//     answers: [
+//       { text: "Work alone or with one other person", value: 1 },  // Introversion
+//       { text: "Work in a team", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 9,
+//     text: "You recharge best by:",
+//     answers: [
+//       { text: "Having some alone time", value: 1 },  // Introversion
+//       { text: "Being with friends", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 10,
+//     text: "You are more likely to:",
+//     answers: [
+//       { text: "Feel drained after long periods of socializing", value: 1 },  // Introversion
+//       { text: "Feel energized after socializing", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 11,
+//     text: "When approaching a new task, you focus more on:",
+//     answers: [
+//       { text: "Details and specifics", value: 1 },  // Sensing
+//       { text: "The big picture and possibilities", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 12,
+//     text: "You are more interested in:",
+//     answers: [
+//       { text: "What is happening in the present", value: 1 },  // Sensing
+//       { text: "What could happen in the future", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 13,
+//     text: "When you make decisions, you tend to:",
+//     answers: [
+//       { text: "Rely on past experiences", value: 1 },  // Sensing
+//       { text: "Think of potential outcomes and possibilities", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 14,
+//     text: "You prefer work that:",
+//     answers: [
+//       { text: "Has clear instructions and a practical outcome", value: 1 },  // Sensing
+//       { text: "Allows room for creativity and innovation", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 15,
+//     text: "When thinking about the future, you:",
+//     answers: [
+//       { text: "Like to plan based on concrete details", value: 1 },  // Sensing
+//       { text: "Focus on what could be and dream about possibilities", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 16,
+//     text: "When following instructions, you prefer:",
+//     answers: [
+//       { text: "Clear, detailed steps", value: 1 },  // Sensing
+//       { text: "A general sense of the direction and freedom to explore", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 17,
+//     text: "Do you usually:",
+//     answers: [
+//       { text: "Focus on the here and now", value: 1 },  // Sensing
+//       { text: "Daydream or think about the future", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 18,
+//     text: "When solving problems, you are more likely to:",
+//     answers: [
+//       { text: "Look at what has worked before", value: 1 },  // Sensing
+//       { text: "Brainstorm new and creative solutions", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 19,
+//     text: "You trust information that is:",
+//     answers: [
+//       { text: "Concrete and reliable", value: 1 },  // Sensing
+//       { text: "Abstract and imaginative", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 20,
+//     text: "You would describe yourself as more:",
+//     answers: [
+//       { text: "Practical and realistic", value: 1 },  // Sensing
+//       { text: "Imaginative and theoretical", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 21,
+//     text: "When making a decision, you tend to focus on:",
+//     answers: [
+//       { text: "Logic and facts", value: 1 },  // Thinking
+//       { text: "People's feelings and values", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 22,
+//     text: "When arguing with someone, you are more likely to:",
+//     answers: [
+//       { text: "Point out the logical flaws", value: 1 },  // Thinking
+//       { text: "Consider the other person's emotions", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 23,
+//     text: "When solving problems, you are more likely to:",
+//     answers: [
+//       { text: "Use logical analysis", value: 1 },  // Thinking
+//       { text: "Consider the needs of people involved", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 24,
+//     text: "When receiving criticism, you:",
+//     answers: [
+//       { text: "Analyze whether it is logical", value: 1 },  // Thinking
+//       { text: "Feel hurt if it seems too harsh", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 25,
+//     text: "In a work environment, you prefer to:",
+//     answers: [
+//       { text: "Follow logical processes", value: 1 },  // Thinking
+//       { text: "Build harmony among coworkers", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 26,
+//     text: "You feel more comfortable when:",
+//     answers: [
+//       { text: "Decisions are made based on fairness and logic", value: 1 },  // Thinking
+//       { text: "Decisions take into account personal values and feelings", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 27,
+//     text: "Do you tend to:",
+//     answers: [
+//       { text: "Analyze a situation objectively", value: 1 },  // Thinking
+//       { text: "Put yourself in others' shoes to understand their feelings", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 28,
+//     text: "When helping others, you tend to:",
+//     answers: [
+//       { text: "Offer practical solutions", value: 1 },  // Thinking
+//       { text: "Offer emotional support", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 29,
+//     text: "Do you see yourself as more:",
+//     answers: [
+//       { text: "Logical and straightforward", value: 1 },  // Thinking
+//       { text: "Empathetic and caring", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 30,
+//     text: "When resolving conflicts, you are more likely to:",
+//     answers: [
+//       { text: "Focus on finding a fair solution", value: 1 },  // Thinking
+//       { text: "Consider the emotional needs of everyone involved", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 31,
+//     text: "When working on a project, you prefer:",
+//     answers: [
+//       { text: "Having a structured plan", value: 1 },  // Judging
+//       { text: "Going with the flow", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 32,
+//     text: "When organizing your day, you are more likely to:",
+//     answers: [
+//       { text: "Create a detailed schedule", value: 1 },  // Judging
+//       { text: "Keep things open and flexible", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 33,
+//     text: "When making plans, you prefer:",
+//     answers: [
+//       { text: "Sticking to a clear itinerary", value: 1 },  // Judging
+//       { text: "Leaving room for spontaneity", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 34,
+//     text: "You feel more comfortable when:",
+//     answers: [
+//       { text: "Your schedule is well-structured", value: 1 },  // Judging
+//       { text: "Your schedule is flexible", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 35,
+//     text: "When facing a deadline, you are more likely to:",
+//     answers: [
+//       { text: "Finish well ahead of time", value: 1 },  // Judging
+//       { text: "Work best under pressure", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 36,
+//     text: "You are more comfortable when your tasks are:",
+//     answers: [
+//       { text: "Completed ahead of time", value: 1 },  // Judging
+//       { text: "Completed at the last moment", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 37,
+//     text: "When going on a trip, you prefer:",
+//     answers: [
+//       { text: "Having everything planned", value: 1 },  // Judging
+//       { text: "Deciding what to do as you go", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 38,
+//     text: "In a work environment, you:",
+//     answers: [
+//       { text: "Like to follow a structured approach", value: 1 },  // Judging
+//       { text: "Like to adapt as you go", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 39,
+//     text: "When making decisions, you:",
+//     answers: [
+//       { text: "Prefer to decide early", value: 1 },  // Judging
+//       { text: "Prefer to leave options open", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 40,
+//     text: "When faced with a project, you are more likely to:",
+//     answers: [
+//       { text: "Break it down and work in a structured manner", value: 1 },  // Judging
+//       { text: "Work on it in bursts of inspiration", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 41,
+//     text: "At a party, you are more likely to:",
+//     answers: [
+//       { text: "Stick to a few close friends", value: 1 },  // Introversion
+//       { text: "Meet as many people as you can", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 42,
+//     text: "You find yourself more interested in:",
+//     answers: [
+//       { text: "What is real and tangible", value: 1 },  // Sensing
+//       { text: "What is possible and theoretical", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 43,
+//     text: "When making plans, you:",
+//     answers: [
+//       { text: "Like to have everything settled", value: 1 },  // Judging
+//       { text: "Prefer to keep things flexible", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 44,
+//     text: "When approaching a problem, you:",
+//     answers: [
+//       { text: "Use logical analysis", value: 1 },  // Thinking
+//       { text: "Consider the emotional impact", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 45,
+//     text: "In a group discussion, you are more likely to:",
+//     answers: [
+//       { text: "Wait for your turn to speak", value: 1 },  // Introversion
+//       { text: "Jump in with your thoughts", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 46,
+//     text: "You tend to prefer:",
+//     answers: [
+//       { text: "Concrete facts", value: 1 },  // Sensing
+//       { text: "Abstract ideas", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 47,
+//     text: "When working on a team project, you:",
+//     answers: [
+//       { text: "Focus on the logical structure", value: 1 },  // Thinking
+//       { text: "Ensure everyone is comfortable and included", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 48,
+//     text: "In your daily life, you prefer to:",
+//     answers: [
+//       { text: "Have a routine", value: 1 },  // Judging
+//       { text: "Stay flexible", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 49,
+//     text: "You would describe yourself as more:",
+//     answers: [
+//       { text: "Quiet and reserved", value: 1 },  // Introversion
+//       { text: "Outgoing and energetic", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 50,
+//     text: "When learning something new, you prefer:",
+//     answers: [
+//       { text: "Hands-on experience", value: 1 },  // Sensing
+//       { text: "Conceptual learning", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 51,
+//     text: "When making decisions, you focus more on:",
+//     answers: [
+//       { text: "The logical outcome", value: 1 },  // Thinking
+//       { text: "The emotional consequences", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 52,
+//     text: "At work, you are more comfortable when:",
+//     answers: [
+//       { text: "You have a clear structure and deadlines", value: 1 },  // Judging
+//       { text: "You can adapt and work at your own pace", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 53,
+//     text: "You tend to focus on:",
+//     answers: [
+//       { text: "The facts", value: 1 },  // Sensing
+//       { text: "The possibilities", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 54,
+//     text: "When it comes to dealing with people, you:",
+//     answers: [
+//       { text: "Use logical reasoning to solve conflicts", value: 1 },  // Thinking
+//       { text: "Empathize and understand their feelings", value: -1 }  // Feeling
+//     ]
+//   },
+//   {
+//     id: 55,
+//     text: "In social situations, you are more likely to:",
+//     answers: [
+//       { text: "Listen and observe", value: 1 },  // Introversion
+//       { text: "Talk and engage actively", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 56,
+//     text: "When completing a task, you prefer:",
+//     answers: [
+//       { text: "To have a detailed plan", value: 1 },  // Judging
+//       { text: "To improvise as you go", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 57,
+//     text: "When it comes to achieving goals, you:",
+//     answers: [
+//       { text: "Are determined and focused", value: 1 },  // Judging
+//       { text: "Go with the flow and adapt", value: -1 }  // Perceiving
+//     ]
+//   },
+//   {
+//     id: 58,
+//     text: "In conversations, you tend to:",
+//     answers: [
+//       { text: "Listen more than speak", value: 1 },  // Introversion
+//       { text: "Speak more than listen", value: -1 }  // Extraversion
+//     ]
+//   },
+//   {
+//     id: 59,
+//     text: "You prefer ideas that are:",
+//     answers: [
+//       { text: "Tangible and practical", value: 1 },  // Sensing
+//       { text: "Abstract and theoretical", value: -1 }  // Intuition
+//     ]
+//   },
+//   {
+//     id: 60,
+//     text: "When resolving issues, you prioritize:",
+//     answers: [
+//       { text: "Sticking to a clear plan", value: 1 },  // Judging
+//       { text: "Remaining flexible to new possibilities", value: -1 }  // Perceiving
+//     ]
+//   }
+// ];
+
 export const questions = [
   {
     id: 1,
-    text: "In your free time, do you prefer:",
+    text: "I prefer spending time alone to re-energize after social interactions.",
     answers: [
-      { text: "Spending time alone", value: 1 },  // Introversion
-      { text: "Being with others", value: -1 }   // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 2,
-    text: "In a social gathering, do you:",
+    text: "I feel drained after socializing for long periods of time.",
     answers: [
-      { text: "Stick with a small group of close friends", value: 1 },  // Introversion
-      { text: "Mingle with as many people as possible", value: -1 }   // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 3,
-    text: "After a long day, you prefer:",
+    text: "I enjoy deep, meaningful conversations more than small talk.",
     answers: [
-      { text: "Relaxing in a quiet environment", value: 1 },  // Introversion
-      { text: "Going out and socializing", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 4,
-    text: "When meeting new people, do you:",
+    text: "I like being the center of attention in social situations.",
     answers: [
-      { text: "Feel awkward or drained", value: 1 },  // Introversion
-      { text: "Feel excited and energized", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 5,
-    text: "You prefer conversations that are:",
+    text: "I tend to plan ahead and prefer having a clear structure for my day.",
     answers: [
-      { text: "One-on-one or in small groups", value: 1 },  // Introversion
-      { text: "In large groups with many people", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 6,
-    text: "Do you usually:",
+    text: "I prefer to keep my options open and adapt to situations as they arise.",
     answers: [
-      { text: "Think before speaking", value: 1 },  // Introversion
-      { text: "Speak your thoughts as they come to you", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 7,
-    text: "Do you feel more energized when:",
+    text: "I trust my intuition and often rely on gut feelings to make decisions.",
     answers: [
-      { text: "You have time to yourself", value: 1 },  // Introversion
-      { text: "You are surrounded by people", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Intuition
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Sensing
+    ],
   },
   {
     id: 8,
-    text: "When working on a project, you prefer to:",
+    text: "I focus on the details and facts rather than the overall picture.",
     answers: [
-      { text: "Work alone or with one other person", value: 1 },  // Introversion
-      { text: "Work in a team", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: -1 },  // Sensing
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Intuition
+    ],
   },
   {
     id: 9,
-    text: "You recharge best by:",
+    text: "I make decisions based on logic and objective reasoning rather than emotions.",
     answers: [
-      { text: "Having some alone time", value: 1 },  // Introversion
-      { text: "Being with friends", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Thinking
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Feeling
+    ],
   },
   {
     id: 10,
-    text: "You are more likely to:",
+    text: "I prioritize harmony and try to avoid conflicts in my relationships.",
     answers: [
-      { text: "Feel drained after long periods of socializing", value: 1 },  // Introversion
-      { text: "Feel energized after socializing", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 11,
-    text: "When approaching a new task, you focus more on:",
+    text: "I find it easy to stay organized and keep track of multiple tasks.",
     answers: [
-      { text: "Details and specifics", value: 1 },  // Sensing
-      { text: "The big picture and possibilities", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 12,
-    text: "You are more interested in:",
+    text: "I prefer spontaneity and often make decisions on the fly.",
     answers: [
-      { text: "What is happening in the present", value: 1 },  // Sensing
-      { text: "What could happen in the future", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 13,
-    text: "When you make decisions, you tend to:",
+    text: "I enjoy having a variety of experiences and trying new things.",
     answers: [
-      { text: "Rely on past experiences", value: 1 },  // Sensing
-      { text: "Think of potential outcomes and possibilities", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 14,
-    text: "You prefer work that:",
+    text: "I am more comfortable sticking to a routine than trying something unfamiliar.",
     answers: [
-      { text: "Has clear instructions and a practical outcome", value: 1 },  // Sensing
-      { text: "Allows room for creativity and innovation", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 15,
-    text: "When thinking about the future, you:",
+    text: "I am more energized by deep thinking and reflection than by socializing.",
     answers: [
-      { text: "Like to plan based on concrete details", value: 1 },  // Sensing
-      { text: "Focus on what could be and dream about possibilities", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 16,
-    text: "When following instructions, you prefer:",
+    text: "I prefer to stay informed and up-to-date with the latest trends and news.",
     answers: [
-      { text: "Clear, detailed steps", value: 1 },  // Sensing
-      { text: "A general sense of the direction and freedom to explore", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 17,
-    text: "Do you usually:",
+    text: "I value personal time and often need time alone to recharge.",
     answers: [
-      { text: "Focus on the here and now", value: 1 },  // Sensing
-      { text: "Daydream or think about the future", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 18,
-    text: "When solving problems, you are more likely to:",
+    text: "I prefer focusing on one task at a time rather than juggling multiple things.",
     answers: [
-      { text: "Look at what has worked before", value: 1 },  // Sensing
-      { text: "Brainstorm new and creative solutions", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 19,
-    text: "You trust information that is:",
+    text: "I tend to focus on the present moment rather than dwelling on the future.",
     answers: [
-      { text: "Concrete and reliable", value: 1 },  // Sensing
-      { text: "Abstract and imaginative", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 20,
-    text: "You would describe yourself as more:",
+    text: "I rely on facts and evidence rather than personal feelings to make decisions.",
     answers: [
-      { text: "Practical and realistic", value: 1 },  // Sensing
-      { text: "Imaginative and theoretical", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Thinking
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Feeling
+    ],
   },
   {
     id: 21,
-    text: "When making a decision, you tend to focus on:",
+    text: "I prefer to keep my thoughts to myself rather than share them with others.",
     answers: [
-      { text: "Logic and facts", value: 1 },  // Thinking
-      { text: "People's feelings and values", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 22,
-    text: "When arguing with someone, you are more likely to:",
+    text: "I enjoy being in a group setting where everyone is talking and sharing ideas.",
     answers: [
-      { text: "Point out the logical flaws", value: 1 },  // Thinking
-      { text: "Consider the other person's emotions", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 23,
-    text: "When solving problems, you are more likely to:",
+    text: "I feel energized after spending time in social situations.",
     answers: [
-      { text: "Use logical analysis", value: 1 },  // Thinking
-      { text: "Consider the needs of people involved", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 24,
-    text: "When receiving criticism, you:",
+    text: "I prefer having a structured and organized approach to my work and life.",
     answers: [
-      { text: "Analyze whether it is logical", value: 1 },  // Thinking
-      { text: "Feel hurt if it seems too harsh", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 25,
-    text: "In a work environment, you prefer to:",
+    text: "I enjoy having a lot of flexibility and freedom in how I work and live.",
     answers: [
-      { text: "Follow logical processes", value: 1 },  // Thinking
-      { text: "Build harmony among coworkers", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 26,
-    text: "You feel more comfortable when:",
+    text: "I value stability and consistency over change and variety.",
     answers: [
-      { text: "Decisions are made based on fairness and logic", value: 1 },  // Thinking
-      { text: "Decisions take into account personal values and feelings", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 27,
-    text: "Do you tend to:",
+    text: "I prefer to think about ideas and concepts rather than focusing on immediate realities.",
     answers: [
-      { text: "Analyze a situation objectively", value: 1 },  // Thinking
-      { text: "Put yourself in others' shoes to understand their feelings", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Intuition
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Sensing
+    ],
   },
   {
     id: 28,
-    text: "When helping others, you tend to:",
+    text: "I prefer to make decisions based on a thorough analysis of facts and evidence.",
     answers: [
-      { text: "Offer practical solutions", value: 1 },  // Thinking
-      { text: "Offer emotional support", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Thinking
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Feeling
+    ],
   },
   {
     id: 29,
-    text: "Do you see yourself as more:",
+    text: "I value personal connections and how others feel more than just the facts and logic.",
     answers: [
-      { text: "Logical and straightforward", value: 1 },  // Thinking
-      { text: "Empathetic and caring", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 30,
-    text: "When resolving conflicts, you are more likely to:",
+    text: "I prefer to keep my options open and be adaptable rather than stick to a fixed plan.",
     answers: [
-      { text: "Focus on finding a fair solution", value: 1 },  // Thinking
-      { text: "Consider the emotional needs of everyone involved", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 31,
-    text: "When working on a project, you prefer:",
+    text: "I feel more comfortable when I can predict and control the situation.",
     answers: [
-      { text: "Having a structured plan", value: 1 },  // Judging
-      { text: "Going with the flow", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 32,
-    text: "When organizing your day, you are more likely to:",
+    text: "I enjoy spending time reflecting on abstract concepts and theories.",
     answers: [
-      { text: "Create a detailed schedule", value: 1 },  // Judging
-      { text: "Keep things open and flexible", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Intuition
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Sensing
+    ],
   },
   {
     id: 33,
-    text: "When making plans, you prefer:",
+    text: "I prefer to focus on the present moment rather than think about the future.",
     answers: [
-      { text: "Sticking to a clear itinerary", value: 1 },  // Judging
-      { text: "Leaving room for spontaneity", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Sensing
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Intuition
+    ],
   },
   {
     id: 34,
-    text: "You feel more comfortable when:",
+    text: "I am more comfortable when I have a clear set of rules and guidelines to follow.",
     answers: [
-      { text: "Your schedule is well-structured", value: 1 },  // Judging
-      { text: "Your schedule is flexible", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 35,
-    text: "When facing a deadline, you are more likely to:",
+    text: "I prefer to avoid confrontation and try to maintain harmony in relationships.",
     answers: [
-      { text: "Finish well ahead of time", value: 1 },  // Judging
-      { text: "Work best under pressure", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 36,
-    text: "You are more comfortable when your tasks are:",
+    text: "I prefer a systematic approach to problem-solving rather than thinking outside the box.",
     answers: [
-      { text: "Completed ahead of time", value: 1 },  // Judging
-      { text: "Completed at the last moment", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 37,
-    text: "When going on a trip, you prefer:",
+    text: "I enjoy engaging in physical activities like sports and exercise.",
     answers: [
-      { text: "Having everything planned", value: 1 },  // Judging
-      { text: "Deciding what to do as you go", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 38,
-    text: "In a work environment, you:",
+    text: "I often get lost in my thoughts and daydreams.",
     answers: [
-      { text: "Like to follow a structured approach", value: 1 },  // Judging
-      { text: "Like to adapt as you go", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Intuition
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Sensing
+    ],
   },
   {
     id: 39,
-    text: "When making decisions, you:",
+    text: "I prefer to have a small circle of close friends rather than a large group of acquaintances.",
     answers: [
-      { text: "Prefer to decide early", value: 1 },  // Judging
-      { text: "Prefer to leave options open", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 40,
-    text: "When faced with a project, you are more likely to:",
+    text: "I enjoy working in teams and collaborating with others to achieve a common goal.",
     answers: [
-      { text: "Break it down and work in a structured manner", value: 1 },  // Judging
-      { text: "Work on it in bursts of inspiration", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 41,
-    text: "At a party, you are more likely to:",
+    text: "I find it easier to focus on details rather than big-picture concepts.",
     answers: [
-      { text: "Stick to a few close friends", value: 1 },  // Introversion
-      { text: "Meet as many people as you can", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: -1 },  // Sensing
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Intuition
+    ],
   },
   {
     id: 42,
-    text: "You find yourself more interested in:",
+    text: "I prefer a spontaneous and flexible approach to tasks rather than a planned one.",
     answers: [
-      { text: "What is real and tangible", value: 1 },  // Sensing
-      { text: "What is possible and theoretical", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Perceiving
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Judging
+    ],
   },
   {
     id: 43,
-    text: "When making plans, you:",
+    text: "I tend to follow my feelings when making decisions rather than relying on logic.",
     answers: [
-      { text: "Like to have everything settled", value: 1 },  // Judging
-      { text: "Prefer to keep things flexible", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 44,
-    text: "When approaching a problem, you:",
+    text: "I feel drained when I am around large groups of people for long periods.",
     answers: [
-      { text: "Use logical analysis", value: 1 },  // Thinking
-      { text: "Consider the emotional impact", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 45,
-    text: "In a group discussion, you are more likely to:",
+    text: "I prefer to plan ahead rather than improvise in the moment.",
     answers: [
-      { text: "Wait for your turn to speak", value: 1 },  // Introversion
-      { text: "Jump in with your thoughts", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 46,
-    text: "You tend to prefer:",
+    text: "I enjoy discussing theories and abstract concepts more than practical matters.",
     answers: [
-      { text: "Concrete facts", value: 1 },  // Sensing
-      { text: "Abstract ideas", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: 1 },  // Intuition
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Sensing
+    ],
   },
   {
     id: 47,
-    text: "When working on a team project, you:",
+    text: "I feel more comfortable when things are settled and there are clear expectations.",
     answers: [
-      { text: "Focus on the logical structure", value: 1 },  // Thinking
-      { text: "Ensure everyone is comfortable and included", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 48,
-    text: "In your daily life, you prefer to:",
+    text: "I enjoy receiving feedback about my performance and areas of improvement.",
     answers: [
-      { text: "Have a routine", value: 1 },  // Judging
-      { text: "Stay flexible", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 49,
-    text: "You would describe yourself as more:",
+    text: "I prefer working alone and focusing on my own tasks rather than working in a team.",
     answers: [
-      { text: "Quiet and reserved", value: 1 },  // Introversion
-      { text: "Outgoing and energetic", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 50,
-    text: "When learning something new, you prefer:",
+    text: "I am energized by new and exciting experiences, and I actively seek them out.",
     answers: [
-      { text: "Hands-on experience", value: 1 },  // Sensing
-      { text: "Conceptual learning", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
   },
   {
     id: 51,
-    text: "When making decisions, you focus more on:",
+    text: "I prefer to make decisions based on personal values and how they affect others.",
     answers: [
-      { text: "The logical outcome", value: 1 },  // Thinking
-      { text: "The emotional consequences", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 52,
-    text: "At work, you are more comfortable when:",
+    text: "I prefer to have everything planned out ahead of time rather than going with the flow.",
     answers: [
-      { text: "You have a clear structure and deadlines", value: 1 },  // Judging
-      { text: "You can adapt and work at your own pace", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 53,
-    text: "You tend to focus on:",
+    text: "I enjoy discussing the details and facts of a situation more than the broader concepts.",
     answers: [
-      { text: "The facts", value: 1 },  // Sensing
-      { text: "The possibilities", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Sensing
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Intuition
+    ],
   },
   {
     id: 54,
-    text: "When it comes to dealing with people, you:",
+    text: "I prefer to listen and observe rather than participate in large group discussions.",
     answers: [
-      { text: "Use logical reasoning to solve conflicts", value: 1 },  // Thinking
-      { text: "Empathize and understand their feelings", value: -1 }  // Feeling
-    ]
+      { text: "Strongly agree", value: 1 },  // Introversion
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Extraversion
+    ],
   },
   {
     id: 55,
-    text: "In social situations, you are more likely to:",
+    text: "I feel more satisfied when I finish a task on time and according to plan.",
     answers: [
-      { text: "Listen and observe", value: 1 },  // Introversion
-      { text: "Talk and engage actively", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 56,
-    text: "When completing a task, you prefer:",
+    text: "I prefer to focus on the present and enjoy the moment, rather than thinking too much about the future.",
     answers: [
-      { text: "To have a detailed plan", value: 1 },  // Judging
-      { text: "To improvise as you go", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: -1 },  // Sensing
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Intuition
+    ],
   },
   {
     id: 57,
-    text: "When it comes to achieving goals, you:",
+    text: "I find it easy to motivate myself and stay organized without much external help.",
     answers: [
-      { text: "Are determined and focused", value: 1 },  // Judging
-      { text: "Go with the flow and adapt", value: -1 }  // Perceiving
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 58,
-    text: "In conversations, you tend to:",
+    text: "I like to be fully prepared for every situation rather than deal with things as they come.",
     answers: [
-      { text: "Listen more than speak", value: 1 },  // Introversion
-      { text: "Speak more than listen", value: -1 }  // Extraversion
-    ]
+      { text: "Strongly agree", value: 1 },  // Judging
+      { text: "Agree", value: 0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Perceiving
+    ],
   },
   {
     id: 59,
-    text: "You prefer ideas that are:",
+    text: "I prefer to make decisions based on my gut feeling rather than overanalyzing the situation.",
     answers: [
-      { text: "Tangible and practical", value: 1 },  // Sensing
-      { text: "Abstract and theoretical", value: -1 }  // Intuition
-    ]
+      { text: "Strongly agree", value: -1 },  // Feeling
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Thinking
+    ],
   },
   {
     id: 60,
-    text: "When resolving issues, you prioritize:",
+    text: "I enjoy working with others to solve problems and create solutions, even if it requires compromise.",
     answers: [
-      { text: "Sticking to a clear plan", value: 1 },  // Judging
-      { text: "Remaining flexible to new possibilities", value: -1 }  // Perceiving
-    ]
-  }
+      { text: "Strongly agree", value: -1 },  // Extraversion
+      { text: "Agree", value: -0.5 },
+      { text: "Neutral", value: 0 },
+      { text: "Disagree", value: 0.5 },
+      { text: "Strongly disagree", value: 1 },  // Introversion
+    ],
+  },
+
 ];
 
 

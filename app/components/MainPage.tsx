@@ -5,7 +5,7 @@ export default function MainPage({ startTest }: {
 }) {
   return (
 
-    <div className='absolute top-[40%] lg:top-[10%] left-0 w-full h-full flex justify-center items-center flex-col z-10'>
+    <div className='absolute top-[40%] lg:top-[10%]  lg:left-10 container mx-auto h-full flex justify-center items-center flex-col z-10'>
       {/* another layer div  */}
 
 
@@ -113,7 +113,8 @@ export default function MainPage({ startTest }: {
 
 
 
-      <button className='border rounded-md mb-3 py-3 px-8 text-lg mt-10 hover:bg-purple-200 text-purple-400 hover:text-purple-600 transition-colors' onClick={startTest}>
+      <button className='z-10 border rounded-md mb-3 py-3 px-8 text-lg mt-10  text-purple-400 hover:bg-purple-200 hover:text-purple-600 transition-colors'
+       onClick={startTest}>
         Start the Test
       </button>
     </div>

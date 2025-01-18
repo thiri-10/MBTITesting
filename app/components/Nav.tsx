@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Card, Menu, MenuItem } from '@mui/material';
+import {  Card, Menu, MenuItem } from '@mui/material';
 import { useState } from "react";
-import { BugAntIcon, CakeIcon, CloudIcon } from "@heroicons/react/16/solid";
+
 import { EyeIcon } from "@heroicons/react/16/solid";
 import { useRouter } from "next/navigation";
 
@@ -24,28 +24,22 @@ export default function Nav() {
     setAnchorEl(null);
   };
 
-  // z-10 absolute top-5 w-screen
-  // className=" z-10 absolute w-screen  flex justify-between items-center "
+
 
   return (
-    <nav className="w-screen">
-      <ul className="flex  justify-between items-center p-6 gap-3">
+    <nav className="w-full mr-[50px]">
+      <ul className="flex  justify-around items-center p-6 gap-3">
 
       <Link
           href="/" className="flex items-center  font-medium text-purple-500"
-          // className="flex items-center gap-5 
-          //   self-start rounded-lg bg-purple-300 px-3 py-1
-          //   text-sm font-medium text-purple-500 transition-colors
-          //    hover:bg-purple-500 hover:text-white md:text-base"
         >
-          {/* <CloudIcon className="text-purple h-5 w-5"></CloudIcon>Scopious */}
           <EyeIcon className="text-purple h-6 w-6"></EyeIcon><span className="text-xl">S</span>copious
         </Link>
 
 
-        <Button className="flex items-center 
-            self-start rounded-lg bg-purple-300  md:px-3 py-1
-            text-purple-500 text-xs md:text-sm
+        <button className="flex items-center 
+            self-start rounded-lg bg-purple-300  px-3 py-1
+            text-purple-500 text-sm 
              hover:bg-purple-500 hover:text-white"
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -66,7 +60,7 @@ export default function Nav() {
               clipRule="evenodd"
             />
           </svg>
-        </Button>
+        </button>
         <Menu className="z-10"
           id="basic-menu"
           anchorEl={anchorEl}
@@ -223,7 +217,3 @@ export default function Nav() {
     </nav>
   )
 }
-
-  {/* <MenuItem onClick={handleClose} >Option 1</MenuItem>
-        <MenuItem onClick={handleClose} >Option 2</MenuItem>
-        <MenuItem onClick={handleClose} >Option 3</MenuItem> */}
