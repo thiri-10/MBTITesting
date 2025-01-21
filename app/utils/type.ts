@@ -16,6 +16,7 @@ export interface Question {
     value: number;    // Answer value
     text: string;     // Answer text
   }[];
+  category: string;
 }
 
 
@@ -516,6 +517,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 2,
@@ -527,6 +529,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 3,
@@ -538,17 +541,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 4,
     text: "I like being the center of attention in social situations.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 5,
@@ -560,17 +565,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+    category: "JP"
   },
   {
     id: 6,
     text: "I prefer to keep my options open and adapt to situations as they arise.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+    category: "JP"
   },
   {
     id: 7,
@@ -582,17 +589,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Sensing
     ],
+    category: "SN"
   },
   {
     id: 8,
     text: "I focus on the details and facts rather than the overall picture.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Sensing
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Sensing
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Intuition
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Intuition
     ],
+    category: "SN"
   },
   {
     id: 9,
@@ -604,17 +613,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Feeling
     ],
+    category: "TF"
   },
   {
     id: 10,
     text: "I prioritize harmony and try to avoid conflicts in my relationships.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+    category: "TF"
   },
   {
     id: 11,
@@ -626,28 +637,31 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+    category: "JP"
   },
   {
     id: 12,
     text: "I prefer spontaneity and often make decisions on the fly.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+    category: "JP"
   },
   {
     id: 13,
     text: "I enjoy having a variety of experiences and trying new things.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 14,
@@ -659,6 +673,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 15,
@@ -670,17 +685,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 16,
     text: "I prefer to stay informed and up-to-date with the latest trends and news.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 17,
@@ -692,6 +709,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 18,
@@ -703,17 +721,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+    category: "JP"
   },
   {
     id: 19,
     text: "I tend to focus on the present moment rather than dwelling on the future.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+     category: "JP"
   },
   {
     id: 20,
@@ -725,6 +745,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Feeling
     ],
+     category: "TF"
   },
   {
     id: 21,
@@ -736,28 +757,31 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 22,
     text: "I enjoy being in a group setting where everyone is talking and sharing ideas.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 23,
     text: "I feel energized after spending time in social situations.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 24,
@@ -769,17 +793,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 25,
     text: "I enjoy having a lot of flexibility and freedom in how I work and live.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+     category: "JP"
   },
   {
     id: 26,
@@ -791,6 +817,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 27,
@@ -802,6 +829,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Sensing
     ],
+    category: "SN"
   },
   {
     id: 28,
@@ -813,28 +841,31 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Feeling
     ],
+     category: "TF"
   },
   {
     id: 29,
     text: "I value personal connections and how others feel more than just the facts and logic.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+     category: "TF"
   },
   {
     id: 30,
     text: "I prefer to keep my options open and be adaptable rather than stick to a fixed plan.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+     category: "JP"
   },
   {
     id: 31,
@@ -846,6 +877,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 32,
@@ -857,17 +889,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Sensing
     ],
+    category: "SN"
   },
   {
     id: 33,
     text: "I prefer to focus on the present moment rather than think about the future.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Sensing
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Sensing
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Intuition
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Intuition
     ],
+    category: "SN"
   },
   {
     id: 34,
@@ -879,17 +913,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 35,
     text: "I prefer to avoid confrontation and try to maintain harmony in relationships.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+     category: "TF"
   },
   {
     id: 36,
@@ -901,17 +937,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 37,
     text: "I enjoy engaging in physical activities like sports and exercise.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 38,
@@ -923,6 +961,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Sensing
     ],
+    category: "SN"
   },
   {
     id: 39,
@@ -934,50 +973,55 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 40,
     text: "I enjoy working in teams and collaborating with others to achieve a common goal.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 41,
     text: "I find it easier to focus on details rather than big-picture concepts.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Sensing
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Sensing
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Intuition
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Intuition
     ],
+    category: "SN"
   },
   {
     id: 42,
     text: "I prefer a spontaneous and flexible approach to tasks rather than a planned one.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Perceiving
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Perceiving
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Judging
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Judging
     ],
+     category: "JP"
   },
   {
     id: 43,
     text: "I tend to follow my feelings when making decisions rather than relying on logic.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+     category: "TF"
   },
   {
     id: 44,
@@ -989,6 +1033,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 45,
@@ -1000,6 +1045,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 46,
@@ -1011,6 +1057,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Sensing
     ],
+    category: "SN"
   },
   {
     id: 47,
@@ -1022,17 +1069,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 48,
     text: "I enjoy receiving feedback about my performance and areas of improvement.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 49,
@@ -1044,28 +1093,31 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 50,
     text: "I am energized by new and exciting experiences, and I actively seek them out.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
   {
     id: 51,
     text: "I prefer to make decisions based on personal values and how they affect others.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+     category: "TF"
   },
   {
     id: 52,
@@ -1077,17 +1129,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 53,
     text: "I enjoy discussing the details and facts of a situation more than the broader concepts.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Sensing
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Sensing
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Intuition
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Intuition
     ],
+    category: "SN"
   },
   {
     id: 54,
@@ -1099,6 +1153,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Extraversion
     ],
+    category: "EI"
   },
   {
     id: 55,
@@ -1110,17 +1165,19 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 56,
     text: "I prefer to focus on the present and enjoy the moment, rather than thinking too much about the future.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Sensing
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Sensing
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Intuition
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Intuition
     ],
+    category: "SN"
   },
   {
     id: 57,
@@ -1132,6 +1189,7 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 58,
@@ -1143,28 +1201,31 @@ export const questions = [
       { text: "Disagree", value: -0.5 },
       { text: "Strongly disagree", value: -1 },  // Perceiving
     ],
+     category: "JP"
   },
   {
     id: 59,
     text: "I prefer to make decisions based on my gut feeling rather than overanalyzing the situation.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Feeling
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Feeling
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Thinking
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Thinking
     ],
+     category: "TF"
   },
   {
     id: 60,
     text: "I enjoy working with others to solve problems and create solutions, even if it requires compromise.",
     answers: [
-      { text: "Strongly agree", value: -1 },  // Extraversion
-      { text: "Agree", value: -0.5 },
+      { text: "Strongly agree", value: 1 },  // Extraversion
+      { text: "Agree", value: 0.5 },
       { text: "Neutral", value: 0 },
-      { text: "Disagree", value: 0.5 },
-      { text: "Strongly disagree", value: 1 },  // Introversion
+      { text: "Disagree", value: -0.5 },
+      { text: "Strongly disagree", value: -1 },  // Introversion
     ],
+    category: "EI"
   },
 
 ];

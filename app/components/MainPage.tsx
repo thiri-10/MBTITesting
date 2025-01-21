@@ -1,8 +1,10 @@
 import { FingerPrintIcon, HeartIcon, LightBulbIcon, PuzzlePieceIcon } from '@heroicons/react/16/solid';
+import { redirect, useRouter } from 'next/navigation';
 
 export default function MainPage({ startTest }: {
   startTest: (any)
 }) {
+  const router = useRouter();
   return (
 
     <div className='absolute top-[40%] lg:top-[10%]  lg:left-10 container mx-auto h-full flex justify-center items-center flex-col z-10'>
@@ -113,8 +115,19 @@ export default function MainPage({ startTest }: {
 
 
 
-      <button className='z-10 border rounded-md mb-3 py-3 px-8 text-lg mt-10  text-purple-400 hover:bg-purple-200 hover:text-purple-600 transition-colors'
+      {/* <button className=' border rounded-md mb-3 py-3 px-8 text-lg mt-10  text-purple-400 
+      hover:bg-purple-200 hover:text-purple-600 transition-all'
        onClick={startTest}>
+        Start the Test
+      </button> */}
+
+      <button className='border rounded-md mb-3 py-3 px-8 text-lg mt-10 text-purple-400
+      hover:text-purple-600 hover:bg-purple-200 transition-color' onClick={()=>{
+router.push('/test')
+        
+        console.log('test click')
+      }
+        }>
         Start the Test
       </button>
     </div>

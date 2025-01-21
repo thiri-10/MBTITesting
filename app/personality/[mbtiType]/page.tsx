@@ -14,12 +14,17 @@ export default function page(){
 
     return (
         <div className="absolute top-[15%] lg:top-[10%]">
-            <div>
+            <div className="mx-4 md:mx-10 ">
                 <h1 className="text-6xl text-purple-600">{facts.mbtiType} - <span className="text-lg ">{facts.name}</span></h1>
-                <article>
+                <article className="leading-loose">
                     <p>{facts.overview}</p>
-                    <h3 className="font-bold text-purple-400">Characteristic</h3>
-                    <ol className="ul number">{facts.characteristic?.split('.').map(character=><li>{character}</li>)}</ol>
+                    {characteristic && (
+                        <>
+                         <h3 className="font-bold text-purple-400">Characteristic</h3>
+                         <ol className="ul number">{facts.characteristic?.split('.').map(character=><li>{character}</li>)}</ol>
+                        </>
+                    )}
+                   
 
                     <h3 className="font-bold text-purple-600">Weakness</h3>
                     <p>{facts.weaknesses}</p>
@@ -30,14 +35,29 @@ export default function page(){
                     <h3 className="font-bold text-purple-500">Career</h3>
                     <p>{facts.career}</p>
 
-                    <h3 className="font-bold text-purple-500">Relationship</h3>
-                    <ol>{facts.relationship?.split('.').map(relation=><li>{relation}</li>)}</ol>
+                    {
+                        facts.relationship && <>
+                         <h3 className="font-bold text-purple-500">Relationship</h3>
+                         <ol>{facts.relationship?.split('.').map(relation=><li>{relation}</li>)}</ol>
+                        </>
+                    }
+                   
 
-                    <h3 className="font-bold text-purple-500">Tips for you</h3>
-                    <p>{facts.tip}</p>
+                    {
+                        facts.tip && <>
+                        <h3 className="font-bold text-purple-500">Tips for you</h3>
+                        <p>{facts.tip}</p>
+                        </>
+                    }
+                    
 
-                    <h3 className="font-bold text-purple-500">Fun Facts</h3>
-                    <p>{facts.funfact}</p>
+                    {
+                        facts.funfact && <>
+                         <h3 className="font-bold text-purple-500">Fun Facts</h3>
+                         <p>{facts.funfact}</p>
+                        </>
+                    }
+                   
                 </article>
             </div>
 

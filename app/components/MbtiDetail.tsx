@@ -37,7 +37,7 @@ export default function MbtiDetail({ type, description, strengths, weaknesses }:
 
             <div className="flex justify-around mt-4 gap-4">
             <div className="mb-6">
-                <h3 className="text-2xl border rounded-sm bg-blue-200 text-black font-semibold mb-2">I AM</h3>
+                <h3 className="text-2xl border rounded-sm bg-blue-200 text-black font-semibold mb-2">YOU ARE</h3>
                 <ul className="list-disc list-inside space-y-1">
                     {strengthList && strengthList.map((strength, index) => (
                         <li key={index} className="text-sm">{strength}</li>

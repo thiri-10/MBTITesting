@@ -1,9 +1,12 @@
 "use client";
 import { Button, FormControl, FormGroup, FormLabel, Input } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import path from "path";
 
 export default function page() {
     const router = useRouter();
+
+    const pathname = usePathname();
 
 
 
@@ -19,7 +22,7 @@ const initialValue = {
     password: ''
 };
 
-
+// const redirectUrl = useSearchParams.get('redirectUrl');
 
 const loginHandler = ()=>{
     router.push('/');
@@ -29,10 +32,10 @@ const loginHandler = ()=>{
 
 
     return (
-        <div className="flex item-center justify-center p-4 m-6">
+        <div className="flex item-center justify-center p-4 md:mt-20">
 
 
-            <FormControl className="w-[260px] flex flex-col items-center bg-purple-300 rounded-md shadow-md md:mt-20">
+            <FormControl className="w-[260px] flex flex-col items-center bg-purple-300 rounded-md shadow-md ">
                 <h1 className="font-semibold text-xl py-4">Register</h1>
                 <FormControl>
                     <FormGroup className="mb-4">

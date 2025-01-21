@@ -33,12 +33,14 @@ export default function Nav() {
       <Link
           href="/" className="flex items-center  font-medium text-purple-500"
         >
-          <EyeIcon className="text-purple h-6 w-6"></EyeIcon><span className="text-xl">S</span>copious
+          <EyeIcon className="text-purple h-8 w-8 md:h-6 md:w-6 "></EyeIcon>
+          <p className="hidden md:block"><span className="text-xl">S</span>
+          copious</p>
         </Link>
 
-
-        <button className="flex items-center 
-            self-start rounded-lg bg-purple-300  px-3 py-1
+ 
+        <button className="flex items-center justify-center
+             rounded-lg bg-purple-300  px-3 py-1
             text-purple-500 text-sm 
              hover:bg-purple-500 hover:text-white"
           id="basic-button"
@@ -194,7 +196,7 @@ export default function Nav() {
     
 
 
-        <Link
+        {/* <Link
           href="/login"
           className="flex items-center 
              rounded-lg bg-purple-300 px-3 py-1
@@ -202,7 +204,7 @@ export default function Nav() {
              hover:bg-purple-500 hover:text-white md:text-base"
         >
           <li>Login</li>
-        </Link>
+        </Link> */}
 
       </ul>
 

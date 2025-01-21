@@ -27,17 +27,4 @@ body {
   }
 }
 
-/* input[type="radio"]:checked + .w-10 {
-  background-color: #8b5cf6; 
-  border-color: #8b5cf6; 
-}
-
-input[type="radio"]:checked + .w-10 > .w-6 {
-  background-color: #ffffff;
-}
-
-.w-10:hover {
-  background-color: #f3f4f6; 
-  transform: scale(1.1); 
-} */
 
